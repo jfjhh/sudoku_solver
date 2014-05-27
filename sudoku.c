@@ -146,16 +146,16 @@ static void getSubGrid(group subGrid, cell loc) {
 
 static int isLegalGroup(sudokuGrid game, group validationGroup,
         cell targetCell, value moveValue) {
-
     // can assume that parameters have been validated.
 
     int i, j;
-    value gameValue, searchValue;
+    // value gameValue, searchValue;
+    value searchValue;
     cell searchIndex;
 
     // Iterate and check if the targetCell is a cell of the group.
     for (i = 0; i < GRID_LENGTH; i++) {
-        gameValue = game[validationGroup[i]];
+        // gameValue = game[validationGroup[i]];
 
         // Cell is in group.
         if (validationGroup[i] == targetCell) {
@@ -388,8 +388,9 @@ int isValid(sudokuGrid game) {
 
 int isFull(sudokuGrid game) {
     // iterate through the grid, check for BLANK.
-    for(int i=0; i < GRID_SIZE; i++) {
-        if(game[i] == BLANK) {
+    int i;
+    for (i = 0; i < GRID_SIZE; i++) {
+        if (game[i] == BLANK) {
             return FALSE;
         }
     }
@@ -442,8 +443,9 @@ int clearCell(sudokuGrid game, cell targetCell) {
 
 cell getBlankCell(sudokuGrid game) {
     // iterate through the grid and get the first cell that is BLANK.
-    for(int i=0; i < GRID_SIZE; i++) {
-        if(game[i] == BLANK) {
+    int i;
+    for (i = 0; i < GRID_SIZE; i++) {
+        if (game[i] == BLANK) {
             return i;
         }
     }
