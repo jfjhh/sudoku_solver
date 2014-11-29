@@ -1,5 +1,5 @@
 CC = gcc
-override CFLAGS = -Wall -g
+CFLAGS = -Wall -g -O2
 OBJECTS = main.c sudoku.c testSudoku.c
 EXE = sudokusolver
 
